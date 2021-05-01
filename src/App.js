@@ -2,7 +2,10 @@ import useInput from './useInput/useInput'
 
 
 function App() {
-  const name = useInput("")
+  // const maxLen = (value) => value.length <= 10 
+  const atCheck = (value) => !value.includes("@")
+
+  const name = useInput("", atCheck)
   return (
     <div className="App">
       <h1>useInput</h1>
