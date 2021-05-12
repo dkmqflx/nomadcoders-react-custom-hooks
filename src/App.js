@@ -1,16 +1,16 @@
-import useTitle from './useTitle/useTitle'
+import useClick from './useClick/useClick'
 
 function App() {
 
-  const titleUpdater = useTitle("Loading ... ")
-  setTimeout(() => {
-    console.log("setTimeOut")
-    titleUpdater("Data is loaded")
-  }, 3000);
+  
+  // const sayHello = () => console.log("say Hello")
+  const sayHello = "hello"
+  const elmentRef = useClick(sayHello)
+  console.log("elmentRef: ", elmentRef)
 
- console.log("App render")
   return (
     <div className="App">
+      <h1 ref={elmentRef}>title</h1>
     </div>
   );
 }
