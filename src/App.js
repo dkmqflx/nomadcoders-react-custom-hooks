@@ -1,16 +1,14 @@
-import useClick from './useClick/useClick'
+import useConfirm from './useConfirm/useConfirm'
 
 function App() {
 
-  
-  // const sayHello = () => console.log("say Hello")
-  const sayHello = "hello"
-  const elmentRef = useClick(sayHello)
-  console.log("elmentRef: ", elmentRef)
+  const deleteWord = () => console.log("Delete word")
+  const abort = "sdf"
+  const confirmDelete = useConfirm("Are you sure", deleteWord, abort)
 
   return (
     <div className="App">
-      <h1 ref={elmentRef}>title</h1>
+      <button onClick={confirmDelete} >클릭</button>
     </div>
   );
 }
