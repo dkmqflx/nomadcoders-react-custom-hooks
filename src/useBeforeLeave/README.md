@@ -1,9 +1,16 @@
+# Usage
+
+
+### useBeforeLeave
+
+- 사용자의 마우스가 브라우저 창을 벗어나면 실행된다
+
+```jsx
 import useBeforeLeave from './useBeforeLeave/useBeforeLeave'
 
 function App() {
 
   const  onLeave = () => alert("leave ?")
-  // const  onLeave = "3"
 
   useBeforeLeave(onLeave)
 
@@ -15,3 +22,7 @@ function App() {
 }
 
 export default App;
+
+
+
+```
