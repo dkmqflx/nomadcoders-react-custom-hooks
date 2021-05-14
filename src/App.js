@@ -1,14 +1,13 @@
-import useNetwork from './useNetwork/useNetwork'
+import useScroll from './useScroll/useScroll'
 
 function App() {
 
-    const onNetworkChange = isOnline => (
-        console.log(isOnline ? "We are back online" : "We just got offline")
-    )
-    const isOnline = useNetwork(onNetworkChange);
+    const { y } = useScroll()
 
     return (
-        <h1>{isOnline ? "We are online" : "We are offline"}</h1>
+        <div style={{height:'1000vh'}}>
+            <h1 style={{ position:"fixed" , color : y > 100 ? "red" : "blue" }}>useScroll</h1>
+        </div>
     )
 }
 
