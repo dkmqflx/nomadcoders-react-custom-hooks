@@ -1,15 +1,18 @@
-import useFadeIn from './useFadeIn/useFadeIn'
+import useNetwork from './useNetwork/useNetwork'
 
 function App() {
 
+    const onNetworkChange = isOnline => (
+        console.log(isOnline ? "We are back online" : "We just got offline")
+    )
+    const isOnline = useNetwork(onNetworkChange);
 
-  const fadeIn = useFadeIn(3, 3)
-
-  return (
-    <div className="App">
-      <h1 {...fadeIn}>useFadeIn</h1>
-    </div>
-  );
+    return (
+        <h1>{isOnline ? "We are online" : "We are offline"}</h1>
+    )
 }
 
 export default App;
+
+
+
