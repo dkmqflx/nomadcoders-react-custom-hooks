@@ -1,12 +1,22 @@
-import useScroll from './useScroll/useScroll'
+import useFullScreen from './useFullScreen/useFullScreen'
 
 function App() {
+    const onChange = (isFull) => (
+        console.log(isFull ? "We are in Fullscreen" : "We are not in Fullscreen")
+    )
 
-    const { y } = useScroll()
+    const { elemRef, triggerFullScreen, exitFullScreen} = useFullScreen(onChange)
 
     return (
-        <div style={{height:'1000vh'}}>
-            <h1 style={{ position:"fixed" , color : y > 100 ? "red" : "blue" }}>useScroll</h1>
+        <div >
+            <div 
+            style={{backgroundColor:'blue'}}
+            ref={elemRef}
+            >
+                <button onClick={triggerFullScreen}>FullScreen</button>
+                <button onClick={exitFullScreen}>ExitFullScreen</button>
+            </div>
+
         </div>
     )
 }
