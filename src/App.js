@@ -1,15 +1,13 @@
-import useBeforeLeave from './useBeforeLeave/useBeforeLeave'
+import useFadeIn from './useFadeIn/useFadeIn'
 
 function App() {
 
-  const  onLeave = () => alert("leave ?")
-  // const  onLeave = "3"
 
-  useBeforeLeave(onLeave)
+  const fadeIn = useFadeIn(3, 3)
 
   return (
     <div className="App">
-      <h1>Leave</h1>
+      <h1 {...fadeIn}>useFadeIn</h1>
     </div>
   );
 }
