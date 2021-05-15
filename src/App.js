@@ -1,22 +1,13 @@
-import useFullScreen from './useFullScreen/useFullScreen'
+import useNotification from './useNotification/useNotification'
 
 function App() {
-    const onChange = (isFull) => (
-        console.log(isFull ? "We are in Fullscreen" : "We are not in Fullscreen")
-    )
 
-    const { elemRef, triggerFullScreen, exitFullScreen} = useFullScreen(onChange)
+    const triggerNotification = useNotification("Notification Click", {body:'notification body'})
+
 
     return (
         <div >
-            <div 
-            style={{backgroundColor:'blue'}}
-            ref={elemRef}
-            >
-                <button onClick={triggerFullScreen}>FullScreen</button>
-                <button onClick={exitFullScreen}>ExitFullScreen</button>
-            </div>
-
+            <button onClick={triggerNotification}>Notificatoin Button</button>
         </div>
     )
 }
