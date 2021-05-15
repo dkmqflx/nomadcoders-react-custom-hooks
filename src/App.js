@@ -1,13 +1,14 @@
-import useNotification from './useNotification/useNotification'
-
+import useAxios from './useAxios/useAxios'
 function App() {
 
-    const triggerNotification = useNotification("Notification Click", {body:'notification body'})
-
+    const{loading, data, refetch} = useAxios({url:
+        "https://jsonplaceholder.typicode.com/todos/1"})
 
     return (
         <div >
-            <button onClick={triggerNotification}>Notificatoin Button</button>
+            {data && data.status}
+            {loading && <span>loading</span>}
+            <button onClick={refetch}>refetch Button</button>
         </div>
     )
 }
